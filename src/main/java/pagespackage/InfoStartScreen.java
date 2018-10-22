@@ -13,6 +13,8 @@ public class InfoStartScreen extends BasePageObject {
 
 
     public InfoStartScreen clickButtonSkipInfo() {
+        System.out.println("\nSkip welcome pop up");
+
         click(buttonSkipInfo);
         return new InfoStartScreen(driver);
     }
