@@ -61,7 +61,8 @@ public class BaseTest {
 
 
     @AfterClass
-    public static void quit() {
+    public static void quit() throws InterruptedException {
+        Thread.sleep(1000);
 
         System.out.println("\nClose app");
         driver.quit();

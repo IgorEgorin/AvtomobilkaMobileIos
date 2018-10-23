@@ -10,12 +10,9 @@ public class TestRegistrationAndAuth extends BaseTest {
 
 
     @Test
-    public void registrateRandomUser() throws Exception{
+    public void registrationRandomUser() throws Exception{
 
         footerApp.logInLikeNewUser();
-
-
-
 
 
         Assert.assertTrue(userCabinet.textBlockAfterCreatingAccountIsEnabled());
@@ -31,7 +28,7 @@ public class TestRegistrationAndAuth extends BaseTest {
 
     @Test
     public void logOutFromUserCabinetWasSuccess() throws Exception{
-        registrateRandomUser();
+        registrationRandomUser();
         Assert.assertTrue(screenFourRegistarationAndAuthorization
                 .titleAuthorizationOnRegAndAuthScreenIsEnabled());
 
@@ -40,7 +37,7 @@ public class TestRegistrationAndAuth extends BaseTest {
 
     @Test
     public void authorizationIntoUserCabinet() throws Exception{
-//        registrateRandomUser();
+//        registrationRandomUser();
 
 
         footerApp.clickOntabRegAndAuth()

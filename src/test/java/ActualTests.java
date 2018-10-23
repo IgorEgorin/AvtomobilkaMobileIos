@@ -8,7 +8,7 @@ public class ActualTests extends BaseTest {
 
 
     @Test
-    public void assertBrandAndModelCarBeforeSuscribeAndAfter() throws Exception{
+    public void assertBrandAndModelCarBeforeAndAfterSubscribe() throws Exception{
 
 //        footerApp.logInByCreatedAccount();
 
@@ -30,9 +30,8 @@ public class ActualTests extends BaseTest {
         userCabinet.clickButtonIsubscribeInsideUserCabinet()
                 .clickfirstCarOnScreenIsubscribeTo();
 
-        Assert.assertTrue("UserNames have difference",varTakeUserNameStrangeUser
+        Assert.assertTrue("Brand and model of car have difference",varTakeUserNameStrangeUser
                 .equals(userCabinet.getTextUserNameHeader()));
-
 
 
         screenOneSelectAcar

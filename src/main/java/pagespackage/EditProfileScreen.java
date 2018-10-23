@@ -18,6 +18,11 @@ public class EditProfileScreen extends BasePageObject {
 
 
     public EditProfileScreen enterUserNameAndSubmit(String userName) {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("\nEnter user name and submit");
 
         typeIntoField(enterUserNameOrName, userName);
