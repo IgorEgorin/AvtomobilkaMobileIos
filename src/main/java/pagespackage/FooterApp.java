@@ -18,7 +18,7 @@ public class FooterApp extends BasePageObject {
 
 
     public ScreenFourRegistarationAndAuthorization clickOntabRegAndAuth() {
-        System.out.println("\nTap on tab 'Registaration And Authorization'");
+        System.out.println("\nTap on tab 'Registration And Authorization'");
 
         click(tabRegAndAuth);
         return new ScreenFourRegistarationAndAuthorization(driver);
@@ -26,7 +26,7 @@ public class FooterApp extends BasePageObject {
 
 
     public ScreenOneSelectAcar clickTabOneSelectAcar() {
-        System.out.println("\nTap on tab 'Registaration And Authorization'");
+        System.out.println("\nTap on tab 'Registration And Authorization'");
 
         click(tabListOfCar);
         return new ScreenOneSelectAcar(driver);
@@ -34,6 +34,8 @@ public class FooterApp extends BasePageObject {
 
 
     public ScreenOneSelectAcar logInByCreatedAccount() {
+        System.out.println("\nLogin by created account");
+
         clickOntabRegAndAuth()
                 .enterLogInAndPassAndSubmit(DataForUser.varCreatedLogIn
                         ,DataForUser.varCreatedPassword);
@@ -43,17 +45,12 @@ public class FooterApp extends BasePageObject {
 
 
     public ScreenOneSelectAcar logInLikeNewUser() {
+        System.out.println("\nLogin like new user");
+
         clickOntabRegAndAuth()
                 .tapRegistrationButton()
                 .enterLogInAndPassAndSubmit(DataForUser.varRandomMail
                         ,DataForUser.varRandomPassword);
-
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         editProfileScreen.enterUserNameAndSubmit(varRandomUserName)
 

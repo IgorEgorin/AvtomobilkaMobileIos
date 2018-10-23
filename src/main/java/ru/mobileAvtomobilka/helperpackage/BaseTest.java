@@ -3,6 +3,7 @@ package ru.mobileAvtomobilka.helperpackage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pagespackage.ScreenFourRegistarationAndAuthorization;
@@ -28,7 +29,7 @@ public class BaseTest {
 
     @Before
     public void setUp() throws MalformedURLException {
-        System.out.println("\nMethod set up");
+        System.out.println("\nOpen app");
         URL serverUrl = new URL ("http://127.0.0.1:4723/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -40,7 +41,7 @@ public class BaseTest {
         capabilities.setCapability("noReset", "true");
 
         driver = new IOSDriver<>(serverUrl,capabilities);
-        driver.manage().timeouts().implicitlyWait(700, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 
 
 
@@ -59,12 +60,12 @@ public class BaseTest {
 
 
 
-//    @AfterClass
-//    public static void quit() {
-//
-//        System.out.println("\nMethod tear down");
-//        driver.quit();
-//    }
+    @AfterClass
+    public static void quit() {
+
+        System.out.println("\nClose app");
+        driver.quit();
+    }
 
 
 

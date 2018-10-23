@@ -34,6 +34,8 @@ public class DataForUser {
     public static String varNewUserCarSalePrice1300000 = "1300000";
     public static String varNewUserCarLocationMoscow = "Moscow";
 
+    public static String varSearchCarForTabOneVolkswagen = "V";
+
     public static String varTextForPostAboutCar = "I recently install new tyres";
 
 

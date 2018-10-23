@@ -1,8 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import ru.mobileAvtomobilka.helperpackage.BaseTest;
-import ru.mobileAvtomobilka.helperpackage.DataForUser;
 
 import static ru.mobileAvtomobilka.helperpackage.DataForUser.*;
 
@@ -10,28 +8,35 @@ public class ActualTests extends BaseTest {
 
 
     @Test
-    public void logOutFromUserCabinetWasSuccess() throws Exception{
+    public void assertBrandAndModelCarBeforeSuscribeAndAfter() throws Exception{
 
-        footerApp.logInByCreatedAccount();
+//        footerApp.logInByCreatedAccount();
 
 
         footerApp.clickTabOneSelectAcar()
-                .clickPictureFromList("4")
-                .tabOnIwantToSubcribeOnThisCar()
+                .searchAndOpenCarPageStrangeUser(varSearchCarForTabOneVolkswagen)
+                .tabOnIwantToSubscribeOnThisCar()
 
-                .swipeFirstPostAboutCar()
+                .scrollFirstPostAboutCar()
                 .pressLikeInFirstPostAboutCar()
 
                 .writeAndSendCommentAboutFirstPost(varCommentWithCurrentDate);
 
+        String varTakeUserNameStrangeUser = userCabinet.getTextUserNameHeader();
+        System.out.println(varTakeUserNameStrangeUser);
+
         footerApp.clickOntabRegAndAuth();
 
-        userCabinet.clickButtonIsubscribeInsideUserCabinet();
+        userCabinet.clickButtonIsubscribeInsideUserCabinet()
+                .clickfirstCarOnScreenIsubscribeTo();
+
+        Assert.assertTrue("UserNames have difference",varTakeUserNameStrangeUser
+                .equals(userCabinet.getTextUserNameHeader()));
 
 
 
-        screenOneSelectAcar.clickPictureFromList("1")
-                .tabOnIwantToUnsubcribeFromThisCar()
+        screenOneSelectAcar
+                .tabOnIwantToUnsubscribeFromThisCar()
                 .tabOkInsidePopUpDoYouWantToUnsubscribe();
 
 
@@ -66,7 +71,6 @@ public class ActualTests extends BaseTest {
                     .deleteLastAddCar();
 
 
-        Thread.sleep(436583857);
 
 
 

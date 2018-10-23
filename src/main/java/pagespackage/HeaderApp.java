@@ -20,45 +20,60 @@ public class HeaderApp extends BasePageObject {
 
 
     public HeaderApp clickButtonSettingsHeader() {
+        System.out.println("\nTap button 'Settings'");
         click(buttonSettingsHeader);
         return new HeaderApp(driver);
     }
 
 
     public HeaderApp clickButtonBackHeader() {
+        System.out.println("\nTap button 'Back'");
+
         click(buttonBackHeader);
         return new HeaderApp(driver);
     }
 
 
     public HeaderApp clickButtonPlusHeader() {
+        System.out.println("\nTap button 'Plus'");
+
         click(buttonPlusHeader);
         return new HeaderApp(driver);
     }
 
 
     public HeaderApp clickButtonCreate() {
+        System.out.println("\nTap button 'Create'");
+
         click(buttonCreate);
         return new HeaderApp(driver);
     }
 
 
     public HeaderApp clickButtonThreeDots() {
+        System.out.println("\nTap button with three dots");
+
         click(buttonThreeDots);
         return new HeaderApp(driver);
     }
 
     public HeaderApp clickPopUpMenuWriteIntoJournal() {
+        System.out.println("\nTap  on 'Write into journal' in pop up menu");
+
         click(popUpMenuWriteIntoJournal);
         return new HeaderApp(driver);
     }
 
     public HeaderApp clickPopUpMenuEditAcar() {
+        System.out.println("\nTap  on 'Edit a car' in pop up menu");
+
         click(popUpMenuEditAcar);
         return new HeaderApp(driver);
     }
 
     public HeaderApp clickButtonAddHeader() {
+        System.out.println("\nTap  on 'Add'");
+
         click(buttonAdd);
         return new HeaderApp(driver);
     }

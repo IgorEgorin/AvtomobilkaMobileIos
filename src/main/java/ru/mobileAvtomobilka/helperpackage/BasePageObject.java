@@ -23,13 +23,13 @@ public class BasePageObject<T>{
 
     private By buttonAddPhotoFromStorage = By.id("Сохраненные фото");
     private By buttonOkWouldYouLikeToAccessToPhoto = By.id("OK");
-    private By folderCameraRoll = By.name("Camera Roll");
-    private By selectFirstPhotoFromFolderCameraRoll = By.xpath("//XCUIElementTypeCell[1]");
+    private By folderMoments = By.name("Moments");
+    private By selectFirstPhotoFromFolderMoments = By.xpath("//XCUIElementTypeCell[2]");
 
 
     public BasePageObject(AppiumDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 4);
+        wait = new WebDriverWait(driver, 15);
     }
 
     protected void typeIntoField(By pathToElement, String text) {
@@ -43,12 +43,14 @@ public class BasePageObject<T>{
 
 
     public T tabOnReadyButton(){
-       click(buttonReady);
+        System.out.println("\nTap on 'Ready' button");
+        click(buttonReady);
         return (T) this;
     }
 
     public T tabOnDaButton(){
-       click(buttonDa);
+        System.out.println("\nTap on 'Yes' button");
+        click(buttonDa);
         return (T) this;
     }
 
@@ -56,22 +58,22 @@ public class BasePageObject<T>{
         System.out.println("\nTap on 'Add photo from device storage' button");
         click(buttonAddPhotoFromStorage);
 
-//        try {
-//            Thread.sleep(1500);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
-        System.out.println("\nSelect folder with photos");
-        click(folderCameraRoll);
-
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        System.out.println("\nSelect folder with photos");
+        click(folderMoments);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         System.out.println("\nSelect first photo in table");
-        click(selectFirstPhotoFromFolderCameraRoll);
+        click(selectFirstPhotoFromFolderMoments);
 
         return (T) this;
     }
@@ -79,6 +81,11 @@ public class BasePageObject<T>{
 
 
     public void click(By pathToElementClick) {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         find(pathToElementClick).click();
     }
 
@@ -104,6 +111,9 @@ public class BasePageObject<T>{
     }
 
     public BasePageObject swipeOrScrollToElement(String swipeOrScroll, String enterDirection, String stringLocatorXpath) {
+
+        System.out.println("\n" + swipeOrScroll.replace("mobile: ","")
+                            + " to " + enterDirection);
 
         WebElement оbject = driver.findElement(By.xpath(stringLocatorXpath));
         JavascriptExecutor js = driver;
