@@ -22,7 +22,7 @@ public class BasePageObject<T>{
     private By keyBoardIsShown = By.xpath("//XCUIElementTypeKeyboard");
 
     private By buttonAddPhotoFromStorage = By.id("Сохраненные фото");
-    private By buttonOkWouldYouLikeToAccessToPhoto = By.id("OK");
+    private By buttonOk = By.id("OK");
     private By folderMoments = By.name("Moments");
     private By selectFirstPhotoFromFolderMoments = By.xpath("//XCUIElementTypeCell[2]");
 
@@ -51,6 +51,12 @@ public class BasePageObject<T>{
     public T tabOnDaButton(){
         System.out.println("\nTap on 'Yes' button");
         click(buttonDa);
+        return (T) this;
+    }
+
+    public T tabOnOkButton(){
+        System.out.println("\nTap on 'Ok' button");
+        click(buttonOk);
         return (T) this;
     }
 
@@ -112,8 +118,9 @@ public class BasePageObject<T>{
 
     public BasePageObject swipeOrScrollToElement(String swipeOrScroll, String enterDirection, String stringLocatorXpath) {
 
-        System.out.println("\n" + swipeOrScroll.replace("mobile: ","")
-                            + " to " + enterDirection);
+        System.out.println("\n" + swipeOrScroll.replaceAll("mobile: ","")
+                        .replace("s","S")
+                        + enterDirection);
 
         WebElement оbject = driver.findElement(By.xpath(stringLocatorXpath));
         JavascriptExecutor js = driver;

@@ -17,12 +17,27 @@ public class ScreenFourRegistarationAndAuthorization extends BasePageObject {
     private By fieldPassword = By.xpath("//XCUIElementTypeSecureTextField");
     private By submitButton = By.id("Готово");
     private By titleAuthorizationOnRegAndAuthScreen = By.id("Авторизация");
+    private By tabButtonForgetApassword = By.id("Забыли пароль?");
 
 
     public ScreenFourRegistarationAndAuthorization tapRegistrationButton() {
         System.out.println("\nTap registration button on 'Registaration And Authorization' screen");
 
         click(tabButtonRegistration);
+        return new ScreenFourRegistarationAndAuthorization(driver);
+    }
+
+    public ScreenFourRegistarationAndAuthorization tabButtonForgetApassword() {
+        System.out.println("\nTap registration button on 'Forget a password?'");
+
+        click(tabButtonForgetApassword);
+        return new ScreenFourRegistarationAndAuthorization(driver);
+    }
+
+    public ScreenFourRegistarationAndAuthorization enterMailInfieldForPasswordRecovery(String mail) {
+        System.out.println("\nTap registration button on 'Forget a password?'");
+
+        typeIntoField(fieldMail, mail);
         return new ScreenFourRegistarationAndAuthorization(driver);
     }
 
@@ -39,7 +54,7 @@ public class ScreenFourRegistarationAndAuthorization extends BasePageObject {
     public boolean titleAuthorizationOnRegAndAuthScreenIsEnabled() {
         System.out.println("\nGet title 'Авторизация' on 'Registaration And Authorization' screen");
 
-        return basePageObject.find(titleAuthorizationOnRegAndAuthScreen)
+        return find(titleAuthorizationOnRegAndAuthScreen)
                 .isEnabled();
     }
 }

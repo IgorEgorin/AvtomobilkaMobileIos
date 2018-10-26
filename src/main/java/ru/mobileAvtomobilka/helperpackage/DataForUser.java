@@ -20,19 +20,32 @@ public class DataForUser {
     public static String varCommentWithCurrentDate = "Этот комментарий был сделан " + varCurrentTime;
 
 
-    public static String varCreatedLogIn = "mail345555@ff.ffgg";
+    public static String varCreatedLogIn = "mail345555@ff.ffggg";
     public static String varCreatedPassword = "asdfffg";
     public static String varCreatedUserName = "qwe";
 
 
     public static String varNewUserCarAudi = "Audi";
     public static String varNewUserCarA1 = "A1";
-    public static String varNewUserCarYear = "2015";
+    public static String varNewUserCarYear2015 = "2015";
     public static String varNewUserCarEngine = "1.4 TDI";
     public static String varNewUserCarManualGB = "МКПП";
     public static String varNewUserCarAutomaticGB = "АКПП";
     public static String varNewUserCarSalePrice1300000 = "1300000";
-    public static String varNewUserCarLocationMoscow = "Moscow";
+    public static String varNewUserCarLocationMoscow = "Москва";
+
+
+    public static String varNewUserCarForModerationCarOne = "Car one";
+    public static String varNewUserCarForModerationModelTwo = "Model two";
+    public static String varNewUserCarYearForModeration1922 = "1922";
+    public static String varNewUserCarEngineForModeration34TSI = "3.4 TSI";
+
+    public static String varNewUserCarSalePriceForModeration2100000 = "2100000";
+    public static String varNewUserCarLocationForModerationSaratov = "Саратов";
+
+
+
+
 
     public static String varSearchCarForTabOneVolkswagen = "V";
 

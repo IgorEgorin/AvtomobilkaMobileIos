@@ -17,7 +17,7 @@ public class FooterApp extends BasePageObject {
     private By tabListOfCar = By.xpath("//XCUIElementTypeTabBar/XCUIElementTypeButton[1]");
 
 
-    public ScreenFourRegistarationAndAuthorization clickOntabRegAndAuth() {
+    public ScreenFourRegistarationAndAuthorization clickOntabRegAndAuthScreen() {
         System.out.println("\nTap on tab 'Registration And Authorization'");
 
         click(tabRegAndAuth);
@@ -36,7 +36,7 @@ public class FooterApp extends BasePageObject {
     public ScreenOneSelectAcar logInByCreatedAccount() {
         System.out.println("\nLogin by created account");
 
-        clickOntabRegAndAuth()
+        clickOntabRegAndAuthScreen()
                 .enterLogInAndPassAndSubmit(DataForUser.varCreatedLogIn
                         ,DataForUser.varCreatedPassword);
 
@@ -47,7 +47,7 @@ public class FooterApp extends BasePageObject {
     public ScreenOneSelectAcar logInLikeNewUser() {
         System.out.println("\nLogin like new user");
 
-        clickOntabRegAndAuth()
+        clickOntabRegAndAuthScreen()
                 .tapRegistrationButton()
                 .enterLogInAndPassAndSubmit(DataForUser.varRandomMail
                         ,DataForUser.varRandomPassword);
