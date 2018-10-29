@@ -34,10 +34,11 @@ public class ScreenFourRegistarationAndAuthorization extends BasePageObject {
         return new ScreenFourRegistarationAndAuthorization(driver);
     }
 
-    public ScreenFourRegistarationAndAuthorization enterMailInfieldForPasswordRecovery(String mail) {
+    public ScreenFourRegistarationAndAuthorization enterMailInfieldForPasswordRecoveryAndSubmit(String mail) {
         System.out.println("\nTap registration button on 'Forget a password?'");
 
         typeIntoField(fieldMail, mail);
+        tabOnReadyButton();
         return new ScreenFourRegistarationAndAuthorization(driver);
     }
 

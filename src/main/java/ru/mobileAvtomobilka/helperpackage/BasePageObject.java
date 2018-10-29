@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 
+import static ru.mobileAvtomobilka.helperpackage.BaseTest.iosDriverForWeb;
+
 public class BasePageObject<T>{
 
     public static WebDriverWait wait;
@@ -39,6 +41,12 @@ public class BasePageObject<T>{
     public WebElement find(By pathToElement) {
 
         return driver.findElement(pathToElement);
+    }
+
+
+    public WebElement findWeb(By pathToElement) {
+
+        return iosDriverForWeb.findElement(pathToElement);
     }
 
 

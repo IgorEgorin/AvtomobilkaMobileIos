@@ -26,6 +26,7 @@ public class BaseTest {
     public static UserCabinet userCabinet;
     public static ScreenOneSelectAcar screenOneSelectAcar;
     public static HeaderApp header;
+    public static WebTempMailAndRecoveryPage webTempMailAndRecoveryPage;
     public static IOSDriver iosDriverForWeb;
 
     private URL serverUrl;
@@ -62,6 +63,7 @@ public class BaseTest {
         editProfileScreen = new EditProfileScreen(driver);
         userCabinet = new UserCabinet(driver);
         screenOneSelectAcar = new ScreenOneSelectAcar(driver);
+        webTempMailAndRecoveryPage = new WebTempMailAndRecoveryPage(driver);
     }
 
     public void openSafariDropMailPage() {
@@ -72,6 +74,7 @@ public class BaseTest {
         capabilities2.setCapability("deviceName", "iPhone 7");
         capabilities2.setCapability("browserName", "Safari");
         iosDriverForWeb = new IOSDriver(serverUrl, capabilities2);
+        iosDriverForWeb.manage().timeouts().implicitlyWait(30000, TimeUnit.MILLISECONDS);
         iosDriverForWeb.get("https://temp-mail.org/ru/");
     }
 

@@ -6,6 +6,8 @@ import ru.mobileAvtomobilka.helperpackage.BasePageObject;
 import ru.mobileAvtomobilka.helperpackage.DataForUser;
 
 import static ru.mobileAvtomobilka.helperpackage.BaseTest.editProfileScreen;
+import static ru.mobileAvtomobilka.helperpackage.BaseTest.header;
+import static ru.mobileAvtomobilka.helperpackage.BaseTest.userCabinet;
 import static ru.mobileAvtomobilka.helperpackage.DataForUser.*;
 
 public class FooterApp extends BasePageObject {
@@ -49,8 +51,8 @@ public class FooterApp extends BasePageObject {
 
         clickOntabRegAndAuthScreen()
                 .tapRegistrationButton()
-                .enterLogInAndPassAndSubmit(DataForUser.varRandomMail
-                        ,DataForUser.varRandomPassword);
+                .enterLogInAndPassAndSubmit(varRandomMail
+                        ,varRandomPassword);
 
         editProfileScreen.enterUserNameAndSubmit(varRandomUserName)
 
@@ -58,6 +60,24 @@ public class FooterApp extends BasePageObject {
                 .enterName(varRandomLetters)
                 .enterAboutMeInfo(varRandomInfoAboutUser)
                 .hideKeyBoardAndPushSubmitButton();
+        return new ScreenOneSelectAcar(driver);
+    }
+
+    public ScreenOneSelectAcar createAndLogOutUserForRecoveryPassword(String mailRec) {
+        System.out.println("\nLogin like new user");
+
+        clickOntabRegAndAuthScreen()
+                .tapRegistrationButton()
+                .enterLogInAndPassAndSubmit(mailRec
+                        ,varRandomPassword);
+
+        editProfileScreen.enterUserNameAndSubmit(varRandomUserName)
+                .clickSkipToEnterInfo();
+
+        header.clickButtonSettingsHeader();
+
+        userCabinet.logOutFromUserCabinet();
+
         return new ScreenOneSelectAcar(driver);
     }
 

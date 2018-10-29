@@ -15,6 +15,8 @@ public class EditProfileScreen extends BasePageObject {
     private By fieldAboutMe = By.id("Обо мне");
     private By buttonAddPhoto = By.id("Сменить фото профиля");
 
+    private By buttonSkip = By.id("Пропустить");
+
 
 
     public EditProfileScreen enterUserNameAndSubmit(String userName) {
@@ -34,6 +36,13 @@ public class EditProfileScreen extends BasePageObject {
         System.out.println("\nEnter name");
 
         typeIntoField(enterUserNameOrName, userName);
+        return new EditProfileScreen(driver);
+    }
+
+    public EditProfileScreen clickSkipToEnterInfo() {
+        System.out.println("\nSkip enter info");
+
+        click(buttonSkip);
         return new EditProfileScreen(driver);
     }
 
